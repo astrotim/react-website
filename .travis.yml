@@ -9,6 +9,7 @@ script:
   - npm run build
 deploy:
   provider: s3
-  access_key_id: AWS_ACCESS_KEY
-  secret_access_key: AWS_SECRET
-  bucket: "2017-astronautweb"  
+  access_key_id: "AKIAJZAA5JIWRGOMXZAQ"
+  secret_access_key: 
+  bucket: "2017-astronautweb"
+  skip_cleanup: true
