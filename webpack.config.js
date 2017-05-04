@@ -7,29 +7,6 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const StaticSiteGeneratorPlugin = require("static-site-generator-webpack-plugin");
 const data = require("./data.js");
 
-const plugins = [
-  new ExtractTextPlugin("style.css"),
-  new StaticSiteGeneratorPlugin("main", data.routes, data),
-  new CopyWebpackPlugin([
-    {
-      from: path.resolve(__dirname, "src", "assets"),
-      to: path.resolve(__dirname, "dist", "assets")
-    }
-  ])
-];
-
-if (process.env.NODE_ENV !== "production") {
-  plugins.push(
-    new BrowserSyncPlugin({
-      host: "localhost",
-      port: 3000,
-      server: { baseDir: ["dist"] },
-      notify: false,
-      cors: true
-    })
-  );
-}
-
 module.exports = {
   entry: [path.join(__dirname, "src", "router.js")],
 
@@ -39,7 +16,23 @@ module.exports = {
     libraryTarget: "umd"
   },
 
-  plugins: plugins,
+  plugins: [
+    new ExtractTextPlugin("style.css"),
+    new StaticSiteGeneratorPlugin("main", data.routes, data),
+    new BrowserSyncPlugin({
+      host: "localhost",
+      port: 3000,
+      server: { baseDir: ["dist"] },
+      notify: false,
+      cors: true
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "src", "assets"),
+        to: path.resolve(__dirname, "dist", "assets")
+      }
+    ])
+  ],
 
   module: {
     rules: [
