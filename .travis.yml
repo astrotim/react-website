@@ -13,3 +13,4 @@ deploy:
   secret_access_key: "uhH+SIB1H/urNJQObvwsYpNwoerH4YaBOPm8OgbT"
   bucket: "2017-astronautweb"
   skip_cleanup: true
+  local_dir: build
