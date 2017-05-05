@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "./node_modules/.bin/rimraf ./dist",
+    "prebuild": "npm run prestart",
     "build": "webpack",
     "start": "./node_modules/.bin/webpack --config ./webpack.config.js --watch"
   },

@@ -6,7 +6,6 @@ class Head extends React.Component {
       <head>
         <meta name="viewport" content="width=device-width" />
         <title>{this.props.title}</title>
-        <link rel="stylesheet" href="/assets/lib/css/normalize.css" />
         <link rel="stylesheet" href="/style.css" />
       </head>
     );
