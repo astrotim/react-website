@@ -14,3 +14,4 @@ deploy:
   bucket: "2017-astronautweb"
   skip_cleanup: true
   local_dir: dist
+  detect_encoding: true
