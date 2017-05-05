@@ -1,9 +1,9 @@
-import React from "react";
-import Head from "../components/Head";
-import Nav from "../components/Nav";
-import Masthead from "../components/Masthead";
+import React from 'react';
+import Head from '../components/Head';
+import Nav from '../components/Nav';
+import Masthead from '../components/Masthead';
 
-import styles from "./templates.scss";
+import styles from './templates.scss';
 
 class Main extends React.Component {
   render() {
@@ -18,7 +18,6 @@ class Main extends React.Component {
               {this.props.children}
             </main>
           </div>
-          <script src="bundle.js" />
         </body>
       </html>
     );
