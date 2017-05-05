@@ -5,8 +5,8 @@
   "scripts": {
     "prestart": "./node_modules/.bin/rimraf ./dist",
     "prebuild": "npm run prestart",
-    "build": "webpack",
-    "start": "./node_modules/.bin/webpack --config ./webpack.config.js --watch"
+    "build": "./node_modules/.bin/webpack --config ./webpack.prod.config.js",
+    "start": "./node_modules/.bin/webpack --config ./webpack.dev.config.js --watch"
   },
   "dependencies": {
     "babel-core": "^6.24.1",

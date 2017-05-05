@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const data = require('./data.js');
 
 module.exports = {
@@ -37,13 +36,6 @@ module.exports = {
         to: path.resolve(__dirname, 'dist'),
       },
     ]),
-    new CompressionPlugin({
-      asset: '[path]',
-      algorithm: 'gzip',
-      test: /\.(js|css)$/,
-      threshold: 10240,
-      minRatio: 0.9,
-    }),
   ],
 
   module: {
