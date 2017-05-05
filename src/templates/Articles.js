@@ -16,21 +16,17 @@ class Articles extends React.Component {
         <h3>So, what is lexing time?</h3>
         <p>
           This digs into the mechanics of how JavaScript engine works. Despite commonly being referred to as an interpreted language, JavaScript compiles code immediately before executing it. For example the statement:
-          {' '}
           <code>var a = 2;</code>
-          {' '}
           is split into two separate steps at lexing time:
         </p>
         <ul>
           <li>
             <code>var a</code>
-            {' '}
             This declares the variable in the scope, before code execution.
           </li>
 
           <li>
             <code>a = 2</code>
-            {' '}
             This assigns the value 2 to the variable a, if it is found in the available scope.
           </li>
         </ul>
@@ -51,7 +47,7 @@ class Articles extends React.Component {
           So… lexical scope is the author-time scope created by a closure. It is the ‘outer’ scope of a function which is defined inside a closure.
         </p>
 
-        <blockquote style="max-width: 650px">
+        <blockquote>
           function scope of outer function === lexical scope of inner function.
         </blockquote>
       </main>
