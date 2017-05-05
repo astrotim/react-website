@@ -18,7 +18,6 @@ class Main extends React.Component {
               {this.props.children}
             </main>
           </div>
-          <script src="/bundle.js" />
         </body>
       </html>
     );

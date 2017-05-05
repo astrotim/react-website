@@ -19,13 +19,6 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css'),
     new StaticSiteGeneratorPlugin('main', data.routes, data),
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      server: {baseDir: ['dist']},
-      notify: false,
-      cors: true,
-    }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src', 'assets'),
@@ -36,6 +29,13 @@ module.exports = {
         to: path.resolve(__dirname, 'dist'),
       },
     ]),
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 3000,
+      server: {baseDir: ['dist']},
+      notify: false,
+      cors: true,
+    }),
   ],
 
   module: {
