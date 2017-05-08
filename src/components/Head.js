@@ -1,5 +1,4 @@
 import React from "react";
-import { canUseDOM } from "exenv";
 
 class Head extends React.Component {
   render() {
