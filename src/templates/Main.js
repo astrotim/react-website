@@ -9,7 +9,7 @@ class Main extends React.Component {
   render() {
     return (
       <html lang="en-AU">
-        <Head title="Static React" />
+        <Head title="High Performance Static Site with React" />
         <body>
           <Masthead />
           <Nav />
