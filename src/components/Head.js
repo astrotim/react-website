@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { canUseDOM } from "exenv";
 
 class Head extends React.Component {
   render() {
@@ -6,7 +7,20 @@ class Head extends React.Component {
       <head>
         <meta name="viewport" content="width=device-width" />
         <title>{this.props.title}</title>
-        <link rel="stylesheet" href="/style.css" />
+        <style>
+          {`
+          body {
+            background-color: hotpink;
+          }
+          `}
+        </style>
+        <link
+          is
+          rel="preload"
+          href="/style.css"
+          as="style"
+          onload="this.rel=&quot;stylesheet&quot;"
+        />
       </head>
     );
   }
