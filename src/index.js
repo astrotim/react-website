@@ -61,6 +61,10 @@ module.exports = function(locals, callback) {
       text-decoration: none;
       padding: .5rem 1rem;
     }
+    main {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   </style>
   <link rel="preload" href="/style.css" as="style" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="/style.css" /></noscript>

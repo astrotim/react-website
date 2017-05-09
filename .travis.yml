@@ -17,3 +17,4 @@ deploy:
   detect_encoding: true
   cache_control: "max-age=31536000"
   default_text_charset: "utf-8"
+  region: ap-southeast-2
