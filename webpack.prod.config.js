@@ -8,12 +8,19 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const data = require('./data.js');
 
 module.exports = {
-  entry: [path.join(__dirname, 'src', 'router.js')],
+  entry: [path.join(__dirname, 'src')],
 
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    libraryTarget: 'umd',
+    libraryTarget: 'umd'
+  },
+
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+    'react-dom/server': 'react-dom/server',
+    'react-router': 'react-router'
   },
 
   plugins: [
@@ -22,20 +29,20 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'src', 'assets'),
-        to: path.resolve(__dirname, 'dist', 'assets'),
+        to: path.resolve(__dirname, 'dist', 'assets')
       },
       {
         from: path.resolve(__dirname, 'src', 'favicon.ico'),
-        to: path.resolve(__dirname, 'dist'),
-      },
+        to: path.resolve(__dirname, 'dist')
+      }
     ]),
     new CompressionPlugin({
       asset: '[path]',
       algorithm: 'gzip',
-      test: /\.(js|css)$/,
+      test: /\.(html|js|css)$/,
       threshold: 10240,
-      minRatio: 0.9,
-    }),
+      minRatio: 0.9
+    })
   ],
 
   module: {
@@ -46,17 +53,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['react', 'es2015'],
-          },
-        },
+            presets: ['react', 'es2015']
+          }
+        }
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
-      },
-    ],
-  },
+          use: ['css-loader', 'sass-loader']
+        })
+      }
+    ]
+  }
 };
