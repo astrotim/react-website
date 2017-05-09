@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
-import {Router, RouterContext, match, createMemoryHistory} from 'react-router';
+import {
+  Router,
+  RouterContext,
+  match,
+  createMemoryHistory
+} from 'react-router';
 import Routes from './routes';
 import Main from './templates/Main';
 
@@ -12,11 +17,11 @@ module.exports = function(locals, callback) {
   return match(
     {
       routes: Routes,
-      location: location,
+      location: location
     },
     function(error, redirectLocation, renderProps) {
       const html = ReactDOMServer.renderToStaticMarkup(
-        <RouterContext {...renderProps} />,
+        <RouterContext {...renderProps} />
       );
       return callback(
         null,
@@ -26,9 +31,35 @@ module.exports = function(locals, callback) {
   <meta name="viewport" content="width=device-width" />
   <title>High Performance Static Site with React</title>
   <style>
+    html {
+      font-family: sans-serif;
+    }
     body {
+      margin: 0;
       background-color: hotpink;
       color: white;
+    }
+    .masthead {
+      text-align: center;
+      padding: 1rem;
+      background-color: hsla(0, 0%, 25%, 0.5);
+    }
+    .logo {
+      width: 260px;
+      height: 40px;
+    }
+    .nav {
+      border-bottom: 1px solid #e9e9e9;
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+    }
+    .nav a {
+      text-decoration: none;
+      padding: .5rem 1rem;
     }
   </style>
   <link rel="preload" href="/style.css" as="style" onload="this.rel='stylesheet'" />
@@ -42,8 +73,8 @@ module.exports = function(locals, callback) {
 </head>
   ${html}
 </html>
-      `,
+      `
       );
-    },
+    }
   );
 };

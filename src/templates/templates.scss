@@ -1,29 +1,11 @@
 @import "../assets/lib/css/normalize.css";
 
 body {
-  background-color: aliceblue;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  background-color: transparent;
   color: black;
 }
 
-.masthead {
-  text-align: center;
-  padding: 1rem;
-}
-
-.nav {
-  border-bottom: 1px solid #e9e9e9;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
-}
-
-.nav a {
-  text-decoration: none;
-  padding: .5rem 1rem;
+main {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
