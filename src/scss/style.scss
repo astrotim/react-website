@@ -1,6 +1,16 @@
 @import "../assets/lib/css/normalize.css";
 
 body {
-  background-color: transparent;
+  background-color: #eee;
   color: black;
+}
+
+article {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin-top: 0;
+  }
 }
