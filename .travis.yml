@@ -14,7 +14,7 @@ deploy:
   bucket: "2017-astronautweb"
   skip_cleanup: true
   local_dir: dist
-  detect_encoding: true
+#  detect_encoding: true
   cache_control: "max-age=31536000"
   default_text_charset: "utf-8"
   region: ap-southeast-2
