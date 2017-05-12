@@ -35,14 +35,14 @@ module.exports = {
         from: path.resolve(__dirname, 'src', 'favicon.ico'),
         to: path.resolve(__dirname, 'dist')
       }
-    ]),
-    new CompressionPlugin({
-      asset: '[path]',
-      algorithm: 'gzip',
-      test: /\.(html|js|css)$/,
-      threshold: 10240,
-      minRatio: 0.9
-    })
+    ])
+    // new CompressionPlugin({
+    //   asset: '[path]',
+    //   algorithm: 'gzip',
+    //   test: /\.(html|js|css)$/,
+    //   threshold: 10240,
+    //   minRatio: 0.9
+    // })
     // function() {
     //   this.plugin('done', function(stats) {
     //     require('fs').writeFileSync(

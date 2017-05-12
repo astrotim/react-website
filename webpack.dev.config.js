@@ -12,7 +12,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     libraryTarget: 'umd'
   },
 
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style.[hash].css'),
     new StaticSiteGeneratorPlugin('main', data.routes, data),
     new CopyWebpackPlugin([
       {
