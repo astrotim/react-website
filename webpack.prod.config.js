@@ -12,7 +12,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.[hash].js',
     libraryTarget: 'umd'
   },
 
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style.[hash].css'),
     new StaticSiteGeneratorPlugin('main', data.routes, data),
     new CopyWebpackPlugin([
       {
@@ -43,6 +43,14 @@ module.exports = {
       threshold: 10240,
       minRatio: 0.9
     })
+    // function() {
+    //   this.plugin('done', function(stats) {
+    //     require('fs').writeFileSync(
+    //       path.join(__dirname, 'dist', 'stats.json'),
+    //       JSON.stringify(stats.toJson())
+    //     );
+    //   });
+    // }
   ],
 
   module: {

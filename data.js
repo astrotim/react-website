@@ -1,7 +1,3 @@
 module.exports = {
-  routes: [
-    '/',
-    '/articles',
-    '/contact'
-  ]
+  routes: ['/', '/articles', '/contact']
 };

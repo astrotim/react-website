@@ -11,8 +11,12 @@ import Routes from './routes';
 import Main from './templates/Main';
 import loadCSSPolyfill from './templates/loadCSSPolyfill.js';
 import criticalCSS from './scss/critical.scss';
+// import stats from './stats.json';
+// console.log(stats.assets[1].name);
 
 module.exports = function(locals, callback) {
+  const hash = locals.webpackStats.hash;
+
   const history = createMemoryHistory();
   const location = history.createLocation(locals.path);
 
@@ -34,8 +38,8 @@ module.exports = function(locals, callback) {
 <title>High Performance Static Site with React</title>
 <style>
 ${criticalCSS.toString()}</style>
-<link rel="preload" href="/style.css" as="style" onload="this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="/style.css" /></noscript>
+<link rel="preload" href="/style.${hash}.css" as="style" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/style.${hash}.css" /></noscript>
 ${loadCSSPolyfill}
 </head>
   ${html}
