@@ -34,3 +34,12 @@ main {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.hero-image {
+  max-width: 100%;
+}
+.hero-wrapper {
+  background-color: #ddd;
+  position: relative;
+  height: 0;
+  padding-bottom: percentage(1584/2376);
+}

@@ -17,9 +17,9 @@ deploy:
 #  detect_encoding: true
   cache_control: "max-age=31536000"
   default_text_charset: "utf-8"
-  region: ap-southeast-2
-after_deploy:
+  region: $AWS_DEFAULT_REGION
+#after_deploy:
   # Allow `awscli` to make requests to CloudFront.
-  - aws configure set preview.cloudfront true
+  #- aws configure set preview.cloudfront true
   # Invalidate every object in the targeted distribution.
-  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+  #- aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
