@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Home extends React.Component {
   render() {
@@ -9,6 +9,13 @@ class Home extends React.Component {
         <p>
           I‘m a front end web developer at the ABC, based in Brisbane. I am currently working on a project to build a new platform for the front end with server-rendered React.
         </p>
+        <div className="hero-wrapper">
+          <img
+            className="hero-image"
+            src="https://res.cloudinary.com/astrotim/image/upload/v1494763134/hero_upyo8o.jpg"
+            alt="Client project for Taste of Perth"
+          />
+        </div>
         <p>
           I build high quality, handcrafted products with modern best practices.
         </p>
