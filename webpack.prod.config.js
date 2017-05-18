@@ -84,7 +84,20 @@ module.exports = {
       },
       {
         test: /critical\.scss/,
-        use: ['to-string-loader', 'css-loader', 'sass-loader']
+        use: [
+          {
+            loader: 'to-string-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       }
     ]
   }

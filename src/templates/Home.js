@@ -5,10 +5,13 @@ class Home extends React.Component {
     return (
       <main>
         <h1>S3 and Cloudfront</h1>
-        <h2>Deployed with Travis CI</h2>
+        <h2>Deployed with Travis CI - testing AWSCLI</h2>
         <p>
           I‘m a front end web developer at the ABC, based in Brisbane. I am currently working on a project to build a new platform for the front end with server-rendered React.
         </p>
+        <div className="hero-wrapper">
+          <img className="hero-image" src="/assets/hero.jpg" />
+        </div>
         <p>
           I build high quality, handcrafted products with modern best practices.
         </p>
